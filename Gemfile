@@ -1,2 +1,2 @@
 source 'https://rubygems.org'
-gem 'fpm', '~> 1.2.0'
+gem 'fpm', '~> 1.3.2'
