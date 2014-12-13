@@ -1,6 +1,6 @@
 # libpng16-deb
 
-Compile libpng 1.6.14 from source and package for installation on Ubuntu 14.04, 14.10 and 15.04.
+Compile libpng 1.6.15 from source and package for installation on Ubuntu 14.04, 14.10 and 15.04.
 
 ## What?
 
