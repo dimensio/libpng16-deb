@@ -1,6 +1,6 @@
 # libpng16-deb
 
-Compile libpng 1.6.16 from source and package for installation on Ubuntu 14.04, 14.10 and 15.04.
+Compile libpng 1.6.17 from source and package for installation on Ubuntu 14.04, 14.10 and 15.04.
 
 ## What?
 
@@ -21,4 +21,4 @@ make
 
 Ubuntu still provides the legacy [libpng12](http://packages.ubuntu.com/source/vivid/libpng) via package manager.
 
-Debian is experimenting with [libpng 1.6.10](https://packages.debian.org/source/experimental/libpng1.6) but when backported this conflicts with packages that depend on _libpng12-0_.
+Debian is experimenting with [libpng 1.6.16](https://packages.debian.org/source/experimental/libpng1.6) but when backported this conflicts with packages that depend on _libpng12-0_.

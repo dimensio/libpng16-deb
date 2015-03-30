@@ -1,4 +1,4 @@
-VERSION=1.6.16
+VERSION=1.6.17
 PACKAGE=libpng16
 TEMP=/tmp/libpng16
 
@@ -20,7 +20,7 @@ compile:
 	mkdir $(TEMP) || true
 	curl -O -z libpng-$(VERSION).tar.xz http://kent.dl.sourceforge.net/project/libpng/$(PACKAGE)/$(VERSION)/libpng-$(VERSION).tar.xz
 	tar xf libpng-$(VERSION).tar.xz
-	cd libpng-$(VERSION) && ./configure --prefix=/usr/local
+	cd libpng-$(VERSION) && ./configure --prefix=/usr/local --disable-static
 	cd libpng-$(VERSION) && $(MAKE)
 	cd libpng-$(VERSION) && $(MAKE) install DESTDIR=$(TEMP)
 
@@ -42,6 +42,7 @@ package:
       --replaces "libpng12-0 (<= $(VERSION))" \
       --replaces "libpng12-dev (<= $(VERSION))" \
       --deb-shlibs "libpng16 16 libpng16 (= $(VERSION))" \
+      --deb-compression xz \
       usr/local/bin usr/local/lib
 	fpm -s dir \
       -t deb \
@@ -59,4 +60,5 @@ package:
       --depends "$(PACKAGE)-16 = $(VERSION)" \
       --replaces "libpng12-0 (<= $(VERSION))" \
       --replaces "libpng12-dev (<= $(VERSION))" \
+      --deb-compression xz \
       usr/local/include
