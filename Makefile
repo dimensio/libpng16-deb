@@ -6,6 +6,7 @@ DEB_URL=http://libpng.org/pub/png/libpng.html
 DEB_DESC=http://libpng.org/pub/png/libpng-manual.txt
 DEB_LICENCE=ftp://ftp.simplesystems.org/pub/libpng/png/src/$(PACKAGE)/libpng-$(VERSION)-LICENSE.txt
 DEB_VENDOR=dimens.io
+DEB_MAINTAINER=Lovell Fuller <lovell@dimens.io>
 
 all: compile package upload
 
@@ -34,7 +35,7 @@ package:
       --description $(DEB_DESC) \
       --license $(DEB_LICENCE) \
       --vendor $(DEB_VENDOR) \
-      --maintainer $(DEB_VENDOR) \
+      --maintainer "$(DEB_MAINTAINER)" \
       --name $(PACKAGE)-16 \
       --package $(PACKAGE)-16-VERSION_ARCH.deb \
       --depends "libc6 >= 2.19" \
@@ -53,7 +54,7 @@ package:
       --description $(DEB_DESC) \
       --license $(DEB_LICENCE) \
       --vendor $(DEB_VENDOR) \
-      --maintainer $(DEB_VENDOR) \
+      --maintainer "$(DEB_MAINTAINER)" \
       --name $(PACKAGE)-dev \
       --package $(PACKAGE)-dev-VERSION_ARCH.deb \
       --depends "zlib1g-dev >= 1:1.2.8" \
