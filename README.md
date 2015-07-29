@@ -1,12 +1,12 @@
 # libpng16-deb
 
-Compile libpng 1.6.17 from source and package for installation on Ubuntu 14.04, 14.10 and 15.04.
+Compile libpng 1.6.18 from source and package for installation on Ubuntu 14.04, 14.10 and 15.04.
 
 ## What?
 
 This repo will:
 
-1. Download [libpng16 source](http://sourceforge.net/projects/libpng/files/libpng16/).
+1. Download [libpng16 source](ftp://ftp.simplesystems.org/pub/libpng/png/src/libpng16/).
 2. Compile shared library from source.
 3. Package shared library _libpng16-16_ and header files _libpng16-dev_ in `.deb` format.
 

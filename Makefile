@@ -1,4 +1,4 @@
-VERSION=1.6.17
+VERSION=1.6.18
 PACKAGE=libpng16
 TEMP=/tmp/libpng16
 
@@ -19,7 +19,7 @@ clean:
 
 compile:
 	mkdir $(TEMP) || true
-	curl -O -z libpng-$(VERSION).tar.xz http://kent.dl.sourceforge.net/project/libpng/$(PACKAGE)/$(VERSION)/libpng-$(VERSION).tar.xz
+	curl -O -z libpng-$(VERSION).tar.xz ftp://ftp.simplesystems.org/pub/libpng/png/src/libpng16/libpng-$(VERSION).tar.xz
 	tar xf libpng-$(VERSION).tar.xz
 	cd libpng-$(VERSION) && ./configure --prefix=/usr/local --disable-static
 	cd libpng-$(VERSION) && $(MAKE)
@@ -40,10 +40,10 @@ package:
       --package $(PACKAGE)-16-VERSION_ARCH.deb \
       --depends "libc6 >= 2.19" \
       --depends "zlib1g >= 1:1.2.8" \
-      --replaces "libpng12-0 (<= $(VERSION))" \
-      --replaces "libpng12-dev (<= $(VERSION))" \
+      --replaces "libpng12-0 (< $(VERSION))" \
       --deb-shlibs "libpng16 16 libpng16 (= $(VERSION))" \
       --deb-compression xz \
+      --deb-no-default-config-files \
       usr/local/bin usr/local/lib
 	fpm -s dir \
       -t deb \
@@ -59,7 +59,7 @@ package:
       --package $(PACKAGE)-dev-VERSION_ARCH.deb \
       --depends "zlib1g-dev >= 1:1.2.8" \
       --depends "$(PACKAGE)-16 = $(VERSION)" \
-      --replaces "libpng12-0 (<= $(VERSION))" \
-      --replaces "libpng12-dev (<= $(VERSION))" \
+      --replaces "libpng12-dev (< $(VERSION))" \
       --deb-compression xz \
+      --deb-no-default-config-files \
       usr/local/include
