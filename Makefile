@@ -1,4 +1,4 @@
-VERSION=1.6.18
+VERSION=1.6.19
 PACKAGE=libpng16
 TEMP=/tmp/libpng16
 
