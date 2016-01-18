@@ -1,6 +1,6 @@
 # libpng16-deb
 
-Compile libpng 1.6.20 from source and package for installation on:
+Compile libpng 1.6.21 from source and package for installation on:
 
 * Ubuntu 14, 15
 * Mint 17
