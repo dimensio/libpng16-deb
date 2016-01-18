@@ -62,4 +62,4 @@ package:
       --replaces "libpng12-dev (< $(VERSION))" \
       --deb-compression xz \
       --deb-no-default-config-files \
-      usr/local/include
+      usr/local/include usr/local/lib/pkgconfig
